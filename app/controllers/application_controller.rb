@@ -1,2 +1,9 @@
 class ApplicationController < ActionController::Base
+  before_action :configure_parmitted_parameters, if: :devise_controller?
+  
+  protected
+  
+    def configure_parmitted_parameters
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
+    end
 end
