@@ -1,3 +1,5 @@
+
+
 <h4>Book detail</h4>
 
 
@@ -18,7 +20,7 @@
     </td>
     
     <td><% if @book.user == current_user %>
-        <%= link_to "Destroy", book_path(@book.id), method: :delete %>
+        <%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？" %>
         <% end %>
     </td>
   </tr>
