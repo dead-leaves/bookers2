@@ -28,7 +28,7 @@
 
             <% if user_signed_in? %>
                <li>
-                 <%= link_to root_path, class: "nav-link text-light" do %>
+                 <%= link_to user_path(@user.id) , class: "nav-link text-light" do %>
                    <i class="fas fa-home"></i> Home
                  <% end %>
                </li>
@@ -91,7 +91,13 @@
 
     </main>
     <footer>
-      <p>CopyRight Infratop.inc</p>
+      <div class="container mt-5">
+        <div class="row">
+          <dir class="mx-auto">
+            <p>CopyRight Infratop.inc</p>
+          </dir>
+        </div>
+      </div>
     </footer>
 
   </body>
