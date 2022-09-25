@@ -1,3 +1,39 @@
+ <% if @book.errors.any? %>
+    <h3><%= @book.errors.count %>errors prohibited this obj from being saved:</h3>
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+
+<h2>User info</h2>
+
+<%= image_tag @user.get_profile_image(100, 100) %>
+
+<table>
+    <tbody>
+        <tr></tr>
+        <tr>
+            <th>name</th>
+            <th><%= @user.name %></th>
+        </tr>
+        
+        <tr>
+            <th>introduction</th>
+            <th><%= @user.introduction %></th>
+        </tr>
+    </tbody>
+</table>
+
+<div>
+  <% if @user == current_user %>
+    <%= link_to '編集', edit_user_path(@user.id) %>
+  <% end %>
+</div>
+
+<%= render 'users/userbooknew', book: @books %>
 
 
 <h4>Book detail</h4>
